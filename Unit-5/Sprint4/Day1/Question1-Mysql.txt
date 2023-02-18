@@ -1,0 +1,150 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+
+mysql> create database nitish;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use nitish;
+Database changed
+mysql> show table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> show tables;
+Empty set (0.06 sec)
+
+mysql> create table student()
+    ->
+    -> create table student();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+
+create table student()' at line 1
+mysql> create table student(
+    -> roll int, name varchar(10), marks int);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> describe student;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| roll  | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| marks | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into student (
+    -> 1,'nitish',405);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1,'nitish',405)' at line 2
+mysql>  insert into student values(1,'nitish',405);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> sho nitish;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sho nitish' at line 1
+mysql> show nitish;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'nitish' at line 1
+mysql> desc nitish;
+ERROR 1146 (42S02): Table 'nitish.nitish' doesn't exist
+mysql> desc student;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| roll  | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| marks | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> show student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'student' at line 1
+mysql> describe student;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| roll  | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| marks | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table deposit (
+    -> ACTNO varchar(25),
+    -> CNAME varchar(20),
+    -> BNAME varchar(20),
+    -> AMOUNT int,
+    -> ADATE DATE);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc deposit;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| ACTNO  | varchar(25) | YES  |     | NULL    |       |
+| CNAME  | varchar(20) | YES  |     | NULL    |       |
+| BNAME  | varchar(20) | YES  |     | NULL    |       |
+| AMOUNT | int         | YES  |     | NULL    |       |
+| ADATE  | date        | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> create table BRANCH(
+    -> BNAME VARCHAR 20
+    -> create table BRANCH(
+    -> )
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '20
+create table BRANCH(
+)
+)' at line 2
+mysql> create table BRANCH(
+    -> BNAME VARCHAR(20),
+    -> CITY VARCHAR(20));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DESC BRANCH;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| BNAME | varchar(20) | YES  |     | NULL    |       |
+| CITY  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE CUSTOMER(
+    -> CNAME VARCHAR(20),
+    -> CITY VARCHAR(20));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> CREATE TABLE BORROW(
+    -> LOANNO VARCHAR(5),
+    -> CNAME VARCHAR(20),
+    -> BNAME VARCHAR(20),
+    -> AMOUNT INT);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> ^C
+mysql> ^C
+mysql>
